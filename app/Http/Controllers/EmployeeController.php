@@ -15,8 +15,7 @@ class EmployeeController extends Controller
     public function index()
     {
         $employees = Employee::get();
-        return view('layouts.cms', ['employees' => $employees]);
-        
+        return view('layouts.cms', ['employees' => $employees]);   
         //
     }
 
