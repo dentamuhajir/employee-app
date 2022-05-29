@@ -1,0 +1,48 @@
+VALET
+    == General ==
+    Base Domain             => http://laravel-valet.test/
+
+    == Command ==
+    valet forget	        => Run this command from a "parked" directory to remove it from the parked directory list.
+    valet paths	            => View all of your "parked" paths.
+    valet restart	        => Restart the Valet daemon.
+    valet start	            => Start the Valet daemon.
+    valet stop	            => Stop the Valet daemon.
+    valet uninstall	        => Uninstall the Valet daemon entirely.
+DB
+    == MySQL ==
+
+    Start MySQL             => brew services start mysql
+    MySQL Console           => mysql -u root -p
+    Create DB               => CREATE DATABASE <database_name>;
+
+    == Tinker ==
+    run                     => php artisan tinker
+    check connection        => DB::connection()->getPdo();
+    show tables             => $tables = \DB::select('show tables');
+                            => DB::table('<table_name>')->get();
+    show column             => Schema::getColumnListing('table_name');
+
+    == Migration ==
+    create                  => php artisan make:migration create_employees_table
+    run                     => php artisan migrate
+
+    == Seeder ==
+    create                  => php artisan make:seeder EmployeeSeeder
+    run                     => php artisan db:seed --class=EmployeeSeeder
+
+    == Model ==
+    create                  => php artisan make:model Employee
+                            => if db not fit with the model you may add  
+                                protected $table = 'my_flights';
+                                on your model 
+
+    == Controller ==
+    create                  => php artisan make:controller ExampleController --resource
+
+
+
+GIT
+    git add
+    git push -u origin
+    git remote add origin git@github.com:dentamuhajir/employee-app.git
